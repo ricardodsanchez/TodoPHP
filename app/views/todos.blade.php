@@ -31,6 +31,11 @@
 		<div>
 			<input type="text" class="form-control" name="inputAuthor" id="inputAuthor" placeholder="Assign to" />
 		</div>
+		<div><br></div>
+		<div>
+			<input type="text" class="form-control" name="inputTags" id="inputTags" placeholder="Enter a category or more separated by commas" />
+ 		</div>
+
 		<div class="form-group">
 	      <div>
 	      	<br>
@@ -47,6 +52,7 @@
 	      <th>Title</th>
 	      <th>Description</th>
 	      <th>Author</th>
+	      <th>Category</th>
 	    </tr>
 	  </thead>
 	  <tbody>
@@ -56,6 +62,7 @@
 		    <td>{{ $todo->title }} </td>
 		    <td>{{ $todo->description }}</td>
 		    <td>{{ $todo->author }}</td>
+		    <td>{{ $todo->tags }}</td>
 		</tr>		
 		@endforeach
 	  </tbody>

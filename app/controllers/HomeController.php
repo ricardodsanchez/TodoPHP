@@ -32,10 +32,15 @@ class HomeController extends BaseController {
 				$todo->complete = false;
 				$todo->duedate = date("Y-m-d h:i:s", $d);
 				$todo->author = Input::get('inputAuthor');
+				$todo->tags = Input::get('inputTags');
 				$todo->save();
 			}
 
 		$todos = Todo::all();
+
+		// todo: use a redirect instead of the line below to
+		// avoid persisting the same data if user hits the 
+		// refresh button
 		return View::make('todos')->with('todos', $todos);
 	}
 
